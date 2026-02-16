@@ -68,10 +68,9 @@ export const projects: Project[] = [
     id: "4",
     title: "Fight Cam",
     description: "AI automatic video editor for martial arts",
-    thumbnail: "https://images.unsplash.com/photo-1619983081563-430f63602796?w=800&q=80",
+    thumbnail: "/images/projects/fight-cam/thumbnail.jpg",
     images: [
-      "https://images.unsplash.com/photo-1619983081563-430f63602796?w=1200&q=80",
-      "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=1200&q=80",
+      "/images/projects/fight-cam/thumbnail.jpg",
     ],
     videos: [
       "/videos/projects/fight-cam/fight-cam.mp4",
