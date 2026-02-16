@@ -13,10 +13,10 @@ export default function Home() {
       <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="mb-16 text-center space-y-4">
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
-            My Projects
+            Portfolio
           </h1>
           <p className="text-lg text-[var(--text-muted)] max-w-2xl mx-auto">
-            프로젝트들을 전시했습니다.
+            이우영 010-7207-3312
           </p>
         </div>
 
