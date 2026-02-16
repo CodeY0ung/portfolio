@@ -172,16 +172,16 @@ export default function ProjectDetail() {
         >
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-24">
             <div className="space-y-8">
-              <div className="relative h-[60vh] rounded-3xl overflow-hidden border border-white/10">
+              <div className="relative h-[60vh] rounded-3xl overflow-hidden border border-white/10 bg-[var(--surface)]">
                 <Image
                   src={project.images[0]}
                   alt={project.title}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   priority
                 />
                 <div
-                  className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"
+                  className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"
                   style={{
                     background: `linear-gradient(to top, ${project.color}33, transparent)`,
                   }}
@@ -211,17 +211,17 @@ export default function ProjectDetail() {
                   ))}
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-8">
                   {project.images.slice(1).map((image, idx) => (
                     <div
                       key={idx}
-                      className="relative h-64 rounded-2xl overflow-hidden border border-white/10"
+                      className="relative h-96 rounded-2xl overflow-hidden border border-white/10 bg-[var(--surface)]"
                     >
                       <Image
                         src={image}
                         alt={`${project.title} screenshot ${idx + 2}`}
                         fill
-                        className="object-cover"
+                        className="object-contain"
                       />
                     </div>
                   ))}
