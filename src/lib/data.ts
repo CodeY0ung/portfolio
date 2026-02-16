@@ -15,10 +15,9 @@ export const projects: Project[] = [
     id: "1",
     title: "농장스 주문폼",
     description: "Nongjangs order form renewal",
-    thumbnail: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
+    thumbnail: "/images/projects/nongjangs/thumbnail.png",
     images: [
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80",
-      "https://images.unsplash.com/photo-1676299081847-824916de030a?w=1200&q=80",
+      "/images/projects/nongjangs/thumbnail.png",
     ],
     tags: ["Web", "React", "Springboot", "MySQL"],
     color: "#5E6AD2",
