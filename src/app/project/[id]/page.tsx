@@ -212,9 +212,30 @@ export default function ProjectDetail() {
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-8">
+                  {/* Videos */}
+                  {project.videos?.map((video, idx) => (
+                    <div
+                      key={`video-${idx}`}
+                      className="relative h-96 rounded-2xl overflow-hidden border border-white/10 bg-[var(--surface)] col-span-2"
+                    >
+                      <video
+                        src={video}
+                        className="w-full h-full object-contain"
+                        controls
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                      >
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                  ))}
+
+                  {/* Images */}
                   {project.images.slice(1).map((image, idx) => (
                     <div
-                      key={idx}
+                      key={`image-${idx}`}
                       className="relative h-96 rounded-2xl overflow-hidden border border-white/10 bg-[var(--surface)]"
                     >
                       <Image

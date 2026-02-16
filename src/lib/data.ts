@@ -4,6 +4,7 @@ export interface Project {
   description: string;
   thumbnail: string;
   images: string[];
+  videos?: string[];
   tags: string[];
   color: string;
   likes: number;
@@ -71,6 +72,9 @@ export const projects: Project[] = [
     images: [
       "https://images.unsplash.com/photo-1619983081563-430f63602796?w=1200&q=80",
       "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=1200&q=80",
+    ],
+    videos: [
+      "/videos/projects/fight-cam/fight-cam.mp4",
     ],
     tags: ["App", "Flutter", "Firebase", "FFmpeg", "AI"],
     color: "#F72585",
