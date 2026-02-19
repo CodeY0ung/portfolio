@@ -22,7 +22,9 @@ export const projects: Project[] = [
     description: "Nongjangs order form renewal",
     thumbnail: "/images/projects/nongjangs/thumbnail.png",
     images: [
-      { src: "/images/projects/nongjangs/thumbnail.png" },
+      { src: "/images/projects/nongjangs/screenshot1.png", caption: "" },
+      { src: "/images/projects/nongjangs/screenshot2.png", caption: "" },
+      { src: "/images/projects/nongjangs/screenshot3.png", caption: "" },
     ],
     tags: ["Web", "React", "Springboot", "MySQL"],
     color: "#5E6AD2",
