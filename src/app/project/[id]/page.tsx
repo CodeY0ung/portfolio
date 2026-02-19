@@ -174,7 +174,7 @@ export default function ProjectDetail() {
             <div className="space-y-8">
               <div className="relative h-[60vh] rounded-3xl overflow-hidden border border-white/10 bg-[var(--surface)]">
                 <Image
-                  src={project.images[0]}
+                  src={project.images[0].src}
                   alt={project.title}
                   fill
                   className="object-contain"
@@ -214,36 +214,44 @@ export default function ProjectDetail() {
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-8">
                   {/* Videos */}
                   {project.videos?.map((video, idx) => (
-                    <div
-                      key={`video-${idx}`}
-                      className="relative h-96 rounded-2xl overflow-hidden border border-white/10 bg-[var(--surface)] col-span-2"
-                    >
-                      <video
-                        src={video}
-                        className="w-full h-full object-contain"
-                        controls
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                      >
-                        Your browser does not support the video tag.
-                      </video>
+                    <div key={`video-${idx}`} className="col-span-2 space-y-2">
+                      <div className="relative h-96 rounded-2xl overflow-hidden border border-white/10 bg-[var(--surface)]">
+                        <video
+                          src={video.src}
+                          className="w-full h-full object-contain"
+                          controls
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                        >
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
+                      {video.caption && (
+                        <p className="text-sm text-[var(--text-muted)] text-center px-2">
+                          {video.caption}
+                        </p>
+                      )}
                     </div>
                   ))}
 
                   {/* Images */}
                   {project.images.slice(1).map((image, idx) => (
-                    <div
-                      key={`image-${idx}`}
-                      className="relative h-96 rounded-2xl overflow-hidden border border-white/10 bg-[var(--surface)]"
-                    >
-                      <Image
-                        src={image}
-                        alt={`${project.title} screenshot ${idx + 2}`}
-                        fill
-                        className="object-contain"
-                      />
+                    <div key={`image-${idx}`} className="space-y-2">
+                      <div className="relative h-96 rounded-2xl overflow-hidden border border-white/10 bg-[var(--surface)]">
+                        <Image
+                          src={image.src}
+                          alt={`${project.title} screenshot ${idx + 2}`}
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
+                      {image.caption && (
+                        <p className="text-sm text-[var(--text-muted)] text-center px-2">
+                          {image.caption}
+                        </p>
+                      )}
                     </div>
                   ))}
                 </div>

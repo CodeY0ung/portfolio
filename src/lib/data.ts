@@ -1,10 +1,15 @@
+export interface MediaItem {
+  src: string;
+  caption?: string;
+}
+
 export interface Project {
   id: string;
   title: string;
   description: string;
   thumbnail: string;
-  images: string[];
-  videos?: string[];
+  images: MediaItem[];
+  videos?: MediaItem[];
   tags: string[];
   color: string;
   likes: number;
@@ -17,7 +22,7 @@ export const projects: Project[] = [
     description: "Nongjangs order form renewal",
     thumbnail: "/images/projects/nongjangs/thumbnail.png",
     images: [
-      "/images/projects/nongjangs/thumbnail.png",
+      { src: "/images/projects/nongjangs/thumbnail.png" },
     ],
     tags: ["Web", "React", "Springboot", "MySQL"],
     color: "#5E6AD2",
@@ -29,22 +34,22 @@ export const projects: Project[] = [
     description: "dating application based on phone calling",
     thumbnail: "/images/projects/aurora/thumbnail.jpg",
     images: [
-      "/images/projects/aurora/screenshot1.jpg",
-      "/images/projects/aurora/screenshot2.jpg",
-      "/images/projects/aurora/screenshot3.jpg",
-      "/images/projects/aurora/screenshot4.jpg",
-      "/images/projects/aurora/screenshot5.jpg",
-      "/images/projects/aurora/screenshot6.jpg",
-      "/images/projects/aurora/screenshot7.jpg",
-      "/images/projects/aurora/screenshot8.jpg",
-      "/images/projects/aurora/screenshot9.jpg",
-      "/images/projects/aurora/screenshot10.jpg",
-      "/images/projects/aurora/screenshot11.jpg",
-      "/images/projects/aurora/screenshot12.jpg",
-      "/images/projects/aurora/screenshot13.jpg",
-      "/images/projects/aurora/screenshot14.jpg",
-      "/images/projects/aurora/screenshot15.jpg",
-      "/images/projects/aurora/screenshot16.jpg",
+      { src: "/images/projects/aurora/screenshot1.jpg", caption: "" },
+      { src: "/images/projects/aurora/screenshot2.jpg", caption: "" },
+      { src: "/images/projects/aurora/screenshot3.jpg", caption: "" },
+      { src: "/images/projects/aurora/screenshot4.jpg", caption: "" },
+      { src: "/images/projects/aurora/screenshot5.jpg", caption: "" },
+      { src: "/images/projects/aurora/screenshot6.jpg", caption: "" },
+      { src: "/images/projects/aurora/screenshot7.jpg", caption: "" },
+      { src: "/images/projects/aurora/screenshot8.jpg", caption: "" },
+      { src: "/images/projects/aurora/screenshot9.jpg", caption: "" },
+      { src: "/images/projects/aurora/screenshot10.jpg", caption: "" },
+      { src: "/images/projects/aurora/screenshot11.jpg", caption: "" },
+      { src: "/images/projects/aurora/screenshot12.jpg", caption: "" },
+      { src: "/images/projects/aurora/screenshot13.jpg", caption: "" },
+      { src: "/images/projects/aurora/screenshot14.jpg", caption: "" },
+      { src: "/images/projects/aurora/screenshot15.jpg", caption: "" },
+      { src: "/images/projects/aurora/screenshot16.jpg", caption: "" },
     ],
     tags: ["App", "Flutter", "Springboot", "MySQL"],
     color: "#00D9FF",
@@ -56,14 +61,14 @@ export const projects: Project[] = [
     description: "Security application for blocking smishing",
     thumbnail: "/images/projects/trust-edge/thumbnail.jpg",
     images: [
-      "/images/projects/trust-edge/thumbnail.jpg",
+      { src: "/images/projects/trust-edge/thumbnail.jpg" },
     ],
     videos: [
-      "/videos/projects/trust-edge/trust-edge-1.mp4",
-      "/videos/projects/trust-edge/trust-edge-2.mp4",
-      "/videos/projects/trust-edge/trust-edge-3.mp4",
-      "/videos/projects/trust-edge/trust-edge-4.mp4",
-      "/videos/projects/trust-edge/trust-edge-5.mp4",
+      { src: "/videos/projects/trust-edge/trust-edge-1.mp4", caption: "" },
+      { src: "/videos/projects/trust-edge/trust-edge-2.mp4", caption: "" },
+      { src: "/videos/projects/trust-edge/trust-edge-3.mp4", caption: "" },
+      { src: "/videos/projects/trust-edge/trust-edge-4.mp4", caption: "" },
+      { src: "/videos/projects/trust-edge/trust-edge-5.mp4", caption: "" },
     ],
     tags: ["App", "Flutter", "FaspApi", "sandbox"],
     color: "#9D4EDD",
@@ -75,10 +80,10 @@ export const projects: Project[] = [
     description: "AI automatic video editor for martial arts",
     thumbnail: "/images/projects/fight-cam/thumbnail.jpg",
     images: [
-      "/images/projects/fight-cam/thumbnail.jpg",
+      { src: "/images/projects/fight-cam/thumbnail.jpg" },
     ],
     videos: [
-      "/videos/projects/fight-cam/fight-cam.mp4",
+      { src: "/videos/projects/fight-cam/fight-cam.mp4", caption: "" },
     ],
     tags: ["App", "Flutter", "Firebase", "FFmpeg", "AI"],
     color: "#F72585",
