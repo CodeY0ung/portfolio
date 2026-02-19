@@ -33,7 +33,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         <div className="relative h-full flex flex-col justify-end p-6">
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              {project.tags.slice(0, 2).map((tag) => (
+              {project.tags.map((tag) => (
                 <span
                   key={tag}
                   className="px-2 py-1 text-xs font-medium rounded-lg bg-white/10 text-white/80"

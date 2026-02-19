@@ -174,7 +174,7 @@ export default function ProjectDetail() {
             <div className="space-y-8">
               <div className="relative h-[60vh] rounded-3xl overflow-hidden border border-white/10 bg-[var(--surface)]">
                 <Image
-                  src={project.images[0].src}
+                  src={project.thumbnail}
                   alt={project.title}
                   fill
                   className="object-contain"
