@@ -22,9 +22,9 @@ export const projects: Project[] = [
     description: "Nongjangs order form renewal",
     thumbnail: "/images/projects/nongjangs/thumbnail.png",
     images: [
-      { src: "/images/projects/nongjangs/screenshot1.png", caption: "" },
-      { src: "/images/projects/nongjangs/screenshot2.png", caption: "" },
-      { src: "/images/projects/nongjangs/screenshot3.png", caption: "" },
+      { src: "/images/projects/nongjangs/screenshot1.png", caption: "로그인 화면" },
+      { src: "/images/projects/nongjangs/screenshot2.png", caption: "메인화면" },
+      { src: "/images/projects/nongjangs/screenshot3.png", caption: "관리자 메인 화면" },
     ],
     tags: ["Web", "React", "Springboot", "MySQL"],
     color: "#5E6AD2",
