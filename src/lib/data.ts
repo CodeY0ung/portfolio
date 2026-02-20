@@ -19,7 +19,7 @@ export const projects: Project[] = [
   {
     id: "1",
     title: "농장스 주문폼",
-    description: "Nongjangs order form renewal",
+    description: "소농 살리기 프로젝트 농장스의 농산물 임시 주문폼 리뉴얼 버전 입니다.",
     thumbnail: "/images/projects/nongjangs/thumbnail.png",
     images: [
       { src: "/images/projects/nongjangs/screenshot1.png", caption: "로그인 화면" },
@@ -33,7 +33,7 @@ export const projects: Project[] = [
   {
     id: "2",
     title: "Aurora",
-    description: "dating application based on phone calling",
+    description: "데이팅 전화 통화 어플. 앱 내에서 무작위 상대와 통화를 제공합니다.",
     thumbnail: "/images/projects/aurora/thumbnail.jpg",
     images: [
       { src: "/images/projects/aurora/screenshot1.jpg", caption: "로딩 화면." },
@@ -60,7 +60,7 @@ export const projects: Project[] = [
   {
     id: "3",
     title: "Trust Edge",
-    description: "Security application for blocking smishing",
+    description: "스미싱 방지 어플. url 스미싱으로 부터 사용자를 실시간으로 보호합니다.",
     thumbnail: "/images/projects/trust-edge/thumbnail.jpg",
     images: [
       { src: "/images/projects/trust-edge/thumbnail.jpg" },
@@ -79,7 +79,7 @@ export const projects: Project[] = [
   {
     id: "4",
     title: "Fight Cam",
-    description: "AI automatic video editor for martial arts",
+    description: "트래킹 전용 영상 편집 어플. AI 기반 자동 트래킹과 수동 트래킹 편집을 제공합니다.",
     thumbnail: "/images/projects/fight-cam/thumbnail.jpg",
     images: [
       { src: "/images/projects/fight-cam/thumbnail.jpg" },
