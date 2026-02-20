@@ -7,24 +7,23 @@ import { Project } from "@/lib/data";
 
 interface ProjectCardProps {
   project: Project;
-  index: number;
 }
 
-export function ProjectCard({ project, index }: ProjectCardProps) {
+export function ProjectCard({ project }: ProjectCardProps) {
+  const isApp = project.tags.includes("App");
+
   return (
     <Link href={`/project/${project.id}`} className="block">
       <div
         className="relative overflow-hidden rounded-2xl bg-[var(--surface)] border border-white/10 transition-transform duration-300 hover:scale-105"
-        style={{
-          aspectRatio: index % 5 === 0 || index % 5 === 4 ? "2/1" : "1/1",
-        }}
+        style={{ aspectRatio: isApp ? "9/16" : "16/9" }}
       >
         <div className="absolute inset-0">
           <Image
             src={project.thumbnail}
             alt={project.title}
             fill
-            className="object-cover"
+            className={isApp ? "object-contain" : "object-cover"}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
@@ -32,7 +31,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
         <div className="relative h-full flex flex-col justify-end p-6">
           <div className="space-y-3">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center flex-wrap gap-2">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
