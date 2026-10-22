@@ -1,58 +1,21 @@
-"use client";
-
-import { projects } from "@/lib/data";
-import { ProjectCard } from "@/components/ProjectCard";
-import { useLikes } from "@/hooks/useLikes";
+import { ProjectCard } from '@/components/ProjectCard';
+import { projects } from '@/lib/projects';
 
 export default function Home() {
-  const projectIds = projects.map((p) => p.id);
-  const { likes } = useLikes(projectIds);
-
-  const webProjects = projects.filter((p) => p.tags.includes("Web"));
-  const appProjects = projects.filter((p) => p.tags.includes("App"));
-
-  return (
-    <div className="min-h-screen bg-[var(--background)]">
-      <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <div className="mb-16 text-center space-y-4">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
-            Portfolio
-          </h1>
-          <p className="text-lg text-[var(--text-muted)] max-w-2xl mx-auto">
-            이우영 010-7207-3312
-          </p>
-        </div>
-
-        {/* Web 섹션 */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-semibold text-white/60 mb-6 tracking-widest uppercase">
-            Web
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {webProjects.map((project) => (
-              <ProjectCard
-                key={project.id}
-                project={{ ...project, likes: likes[project.id] || 0 }}
-              />
-            ))}
-          </div>
-        </section>
-
-        {/* App 섹션 */}
-        <section>
-          <h2 className="text-2xl font-semibold text-white/60 mb-6 tracking-widest uppercase">
-            App
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            {appProjects.map((project) => (
-              <ProjectCard
-                key={project.id}
-                project={{ ...project, likes: likes[project.id] || 0 }}
-              />
-            ))}
-          </div>
-        </section>
-      </main>
-    </div>
-  );
+  return <div className="shell">
+    <section className="hero" id="home">
+      <p className="hero-meta">이우영 &nbsp;/&nbsp; BACKEND DEVELOPER</p>
+      <h1 className="hero-title">서비스를 만드는<br/><span className="secondary">백엔드 개발자.</span></h1>
+      <p className="hero-desc">Spring Boot를 중심으로 웹과 모바일 서비스를<br className="desktop-break"/> 개발하고 운영합니다.</p>
+      <div className="hero-actions"><a href="#projects" className="button-primary">프로젝트 보기 <span aria-hidden="true">↗</span></a>
+      <a className="link-muted" target="_blank" rel="noopener noreferrer" href="https://github.com/CodeY0ung">GitHub ↗</a></div>
+    </section>
+    <section className="projects" id="projects"><div className="section-header"><h2>프로젝트</h2><span className="section-count">0{projects.length} PROJECTS</span></div>
+      <ProjectCard project={projects[0]} featured/><div className="case-grid">{projects.slice(1).map(p => <ProjectCard project={p} key={p.slug}/>)}</div>
+    </section>
+    <section className="about" id="about"><div className="about-grid"><h2>소개</h2><div className="about-copy">
+      <p>요구사항을 코드로 구현하고, 운영 과정에서 발생한 문제까지 해결하는 개발자를 지향합니다.</p>
+      <div className="about-stack">{['Java','Spring Boot','REST API','MySQL','Flutter','React'].map(t=><span key={t}>{t}</span>)}</div>
+    </div></div></section>
+  </div>;
 }
