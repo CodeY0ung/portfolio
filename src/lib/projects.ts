@@ -25,10 +25,10 @@ export const projects: Project[] = [
       "Spring Boot",
       "MySQL"
     ],
-    "architectureNote": "사용 기술을 기준으로 정리한 개념 구조입니다. 실제 배포·인증 구조는 추후 보완합니다.",
+    "architectureNote": "수정 예정",
     "issueTitle": "EC2 서비스 접근 장애",
     "issue": "운영 중 서버 접근 문제가 발생했으며, 인스턴스의 메모리 및 접근 환경을 확인하고 스왑 공간과 직렬 콘솔을 활용해 대응했습니다.",
-    "issueFoot": "재현 조건, 원인 및 사후 개선 내용은 실제 로그를 바탕으로 추가할 예정입니다.",
+    "issueFoot": "수정 예정",
     "image": "/images/projects/nongjangs/thumbnail.png",
     "media": [
       {
