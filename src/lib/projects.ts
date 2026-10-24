@@ -175,10 +175,10 @@ export const projects: Project[] = [
       "편집 제어",
       "영상 처리"
     ],
-    "architectureNote": "상위 수준의 기능 흐름입니다. 프레임 좌표 처리·렌더링 파이프라인은 코드 확인 후 구체화합니다.",
+    "architectureNote": "수정 예정",
     "issueTitle": "영상 트래킹 제어 UX",
     "issue": "이동하는 대상을 사용자가 직관적으로 따라갈 수 있도록 수동 조작 방식을 우선 구현했습니다.",
-    "issueFoot": "자동 트래킹의 완성 범위와 좌표 처리 방식은 별도로 정리합니다.",
+    "issueFoot": "수정 예정",
     "image": "/images/projects/fight-cam/thumbnail.jpg",
     "media": [
       {
