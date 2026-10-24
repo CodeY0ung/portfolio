@@ -125,10 +125,10 @@ export const projects: Project[] = [
       "FastAPI",
       "URL 검사"
     ],
-    "architectureNote": "사용자 앱과 검사 API 간 개념적 관계입니다. 실제 규칙 엔진과 배포 구조는 추후 확인합니다.",
+    "architectureNote": "수정할 계획.",
     "issueTitle": "URL 판단 흐름 구분",
     "issue": "화이트리스트, 블랙리스트, 미등록 URL에 따라 다른 검사 및 경고 흐름을 구성했습니다.",
-    "issueFoot": "탐지 정확도나 오탐 비율은 측정 근거가 확인되면 추가합니다.",
+    "issueFoot": "수정할 계획",
     "image": "/images/projects/trust-edge/thumbnail.jpg",
     "media": [
       {
