@@ -70,10 +70,10 @@ export const projects: Project[] = [
       "Spring Boot",
       "MySQL"
     ],
-    "architectureNote": "저장소에 표시된 기술을 바탕으로 정리했습니다. 음성 통신 방식과 서버 구현 범위는 검증 후 보완합니다.",
+    "architectureNote": "수정 예정.",
     "issueTitle": "기술적 문제 해결 기록",
     "issue": "실시간 통화 상태 관리나 네트워크 예외 처리의 실제 구현 내용을 확인한 뒤 기록할 예정입니다.",
-    "issueFoot": "확인되지 않은 기능을 구현 완료로 표시하지 않습니다.",
+    "issueFoot": "수정 예정.",
     "image": "/images/projects/aurora/thumbnail.jpg",
     "media": [
       {
@@ -125,10 +125,10 @@ export const projects: Project[] = [
       "FastAPI",
       "URL 검사"
     ],
-    "architectureNote": "수정할 계획.",
+    "architectureNote": "수정 예정.",
     "issueTitle": "URL 판단 흐름 구분",
     "issue": "화이트리스트, 블랙리스트, 미등록 URL에 따라 다른 검사 및 경고 흐름을 구성했습니다.",
-    "issueFoot": "수정할 계획",
+    "issueFoot": "수정 예정",
     "image": "/images/projects/trust-edge/thumbnail.jpg",
     "media": [
       {
