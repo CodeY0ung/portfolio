@@ -126,56 +126,77 @@ export const projects: Project[] = [
       }
     ]
   },
+  
   {
-    "slug": "trust-edge",
-    "title": "Trust Edge",
-    "short": "위험한 URL을 검사하고 경고하는 보안 앱",
-    "category": "팀 프로젝트",
-    "role": "PM · 기획 및 기술 선정",
-    "tech": [
+    slug: "trust-edge",
+    title: "Trust Edge",
+    short: "악성 URL 및 스미싱 위험 탐지 모바일 앱",
+    category: "팀 프로젝트",
+    role: "백엔드 개발 · UX 기획 · 기술 선정",
+  
+    tech: [
       "Flutter",
+      "Dart",
+      "Python",
       "FastAPI",
       "YARA"
     ],
-    "overview": "스미싱 URL로부터 사용자를 보호하기 위한 프로젝트입니다. URL 검사의 결과에 따라 안전, 차단 또는 추가 검사 흐름을 제공하도록 기획했습니다.",
-    "contributions": [
-      "제품 요구사항과 검사 시나리오 기획",
-      "Flutter·FastAPI 등 기술 구조 선정",
-      "팀 프로젝트 일정·기능 범위 조율"
+  
+    overview:
+      "스미싱 및 악성 URL로부터 사용자를 보호하기 위한 모바일 보안 서비스입니다. 사용자가 URL에 접근하기 전에 위험 요소를 분석하고, 검사 결과에 따라 안전 여부와 경고 정보를 제공하도록 설계했습니다.",
+  
+    contributions: [
+      "YARA Rule 기반 보조 탐지 및 FastAPI 백엔드 구현",
+      "Python 기반 URL 정적 분석과 위험도 평가 로직 구성",
+      "모바일 사용자 관점의 URL 검사 및 경고 UX 기획",
+      "Flutter와 FastAPI를 연결하는 서비스 구조 설계"
     ],
-    "architecture": [
+  
+    architecture: [
       "Flutter",
       "FastAPI",
-      "URL 검사"
+      "Python / YARA",
+      "위험도 평가"
     ],
-    "architectureNote": "수정 예정.",
-    "issueTitle": "URL 판단 흐름 구분",
-    "issue": "화이트리스트, 블랙리스트, 미등록 URL에 따라 다른 검사 및 경고 흐름을 구성했습니다.",
-    "issueFoot": "수정 예정",
-    "image": "/images/projects/trust-edge/thumbnail.jpg",
-    "media": [
+  
+    architectureNote:
+      "Flutter 앱에서 URL 검사 요청을 전달하면 FastAPI 서버가 검사를 수행하는 구조입니다. Python으로 URL 구조, 도메인, 파일 확장자, 스크립트 패턴 등을 분석하고 YARA Rule을 활용해 추가 악성 패턴을 탐지합니다. 탐지 항목별 가중치를 합산하여 위험도를 분류하며, 심층 분석을 위한 외부 Hybrid Analysis API 연동 코드도 포함되어 있습니다.",
+  
+    issueTitle:
+      "Dart 기반 보안 탐지 구현의 한계",
+  
+    issue:
+      "초기에는 Flutter와 Dart만으로 URL 탐지 기능을 구현하려 했으나, 다양한 악성 패턴 분석과 탐지 규칙을 관리하는 데 어려움이 있었습니다. 이를 해결하기 위해 검사 로직을 Python 기반 FastAPI 서버로 분리했습니다. Python으로 URL 정적 분석을 수행하고, yara-python을 활용해 별도의 YARA 규칙 파일을 로딩하여 추가 위험 패턴을 검사하도록 구성했습니다. 이를 통해 모바일 UI와 보안 분석 로직의 역할을 분리했습니다.",
+  
+    issueFoot:
+      "향후 개선: 현재의 규칙 기반 탐지는 새로운 공격 패턴에 대응하려면 규칙을 지속적으로 관리해야 합니다. 추후 AI 기반 URL 분류 모델을 추가하고 기존 규칙 기반 검사와 결합하여 탐지 정확도를 개선할 계획입니다.",
+  
+    image: "/images/projects/trust-edge/thumbnail.jpg",
+  
+    media: [
       {
-        "type": "video",
-        "src": "/videos/projects/trust-edge/trust-edge-1.mp4",
-        "label": "안전 URL 처리"
+        type: "video",
+        src: "/videos/projects/trust-edge/trust-edge-1.mp4",
+        label: "안전 URL 처리"
       },
       {
-        "type": "video",
-        "src": "/videos/projects/trust-edge/trust-edge-2.mp4",
-        "label": "위험 URL 차단"
+        type: "video",
+        src: "/videos/projects/trust-edge/trust-edge-2.mp4",
+        label: "위험 URL 차단"
       },
       {
-        "type": "video",
-        "src": "/videos/projects/trust-edge/trust-edge-4.mp4",
-        "label": "미등록 URL 검사"
+        type: "video",
+        src: "/videos/projects/trust-edge/trust-edge-4.mp4",
+        label: "미등록 URL 검사"
       },
       {
-        "type": "video",
-        "src": "/videos/projects/trust-edge/trust-edge-5.mp4",
-        "label": "실행 파일 URL 검사"
+        type: "video",
+        src: "/videos/projects/trust-edge/trust-edge-5.mp4",
+        label: "실행 파일 URL 검사"
       }
     ]
   },
+
   {
     slug: "fight-cam",
     title: "Fight Cam",
