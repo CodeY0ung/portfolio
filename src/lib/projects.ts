@@ -3,55 +3,78 @@ export type Project = {slug: string;title: string;short: string;category: string
 
 /** Prototype copy derived from portfolio repository. Validate architecture and outcomes before publishing as confirmed facts. */
 export const projects: Project[] = [
+  
   {
-    "slug": "nongjangs",
-    "title": "농장스 주문 시스템",
-    "short": "농산물 주문과 운영 관리를 위한 웹 서비스",
-    "category": "실무 프로젝트",
-    "role": "단독 개발 · 웹 / 백엔드",
-    "tech": [
+    slug: "nongjangs",
+    title: "농장스 주문 시스템",
+    short: "매주 상품 구성이 바뀌는 농산물 주문·관리 웹서비스",
+    category: "실무 프로젝트",
+    role: "단독 웹 개발 · DB 설계 · 배포 및 운영",
+  
+    tech: [
+      "Java",
       "Spring Boot",
-      "React",
+      "Thymeleaf",
+      "Spring Data JPA",
+      "MySQL",
+      "AWS EC2"
+    ],
+  
+    overview:
+      "소규모 농가의 농산물을 판매하기 위한 주문 및 관리자 웹서비스입니다. 매주 판매 상품이 변경되는 운영 환경에 맞춰 주문 접수, 상품 관리, 주문 내역 조회 등의 기능을 구현했습니다. 데이터베이스 설계부터 서버 개발, 화면 구현, 배포 및 유지보수까지 담당했습니다.",
+  
+    contributions: [
+      "Thymeleaf 기반 주문 및 관리자 화면 구현",
+      "Spring Boot 기반 주문·상품·회원 관리 기능 개발",
+      "MySQL 기반 ERD 설계 및 데이터베이스 구축",
+      "Spring Data JPA를 활용한 엔티티 및 연관관계 설계",
+      "AWS EC2 배포 및 서비스 운영·유지보수"
+    ],
+  
+    architecture: [
+      "Thymeleaf",
+      "Spring MVC",
+      "Service / JPA",
       "MySQL"
     ],
-    "overview": "소규모 농산물 판매를 위한 주문 접수와 관리자 운영 흐름을 구현했습니다. 주문 화면부터 서버 API, 관리자 화면까지 서비스의 주요 흐름을 연결했습니다.",
-    "contributions": [
-      "React 기반 주문 및 관리자 화면 구현",
-      "Spring Boot REST API 개발 및 연동",
-      "AWS EC2 배포 환경 운영과 장애 대응"
-    ],
-    "architecture": [
-      "React",
-      "Spring Boot",
-      "MySQL"
-    ],
-    "architectureNote": "수정 예정",
-    "issueTitle": "EC2 서비스 접근 장애",
-    "issue": "운영 중 서버 접근 문제가 발생했으며, 인스턴스의 메모리 및 접근 환경을 확인하고 스왑 공간과 직렬 콘솔을 활용해 대응했습니다.",
-    "issueFoot": "수정 예정",
-    "image": "/images/projects/nongjangs/thumbnail.png",
-    "media": [
+  
+    architectureNote:
+      "Spring Boot와 Thymeleaf를 활용한 서버 사이드 렌더링(SSR) 구조입니다. Controller에서 요청을 처리하고 Service 계층에서 비즈니스 로직을 수행하며, Spring Data JPA를 통해 MySQL에 데이터를 저장합니다. 애플리케이션은 AWS EC2에 배포하여 운영했습니다.",
+  
+    issueTitle:
+      "EC2 서버 자원 문제 및 주간 상품 변경 대응",
+  
+    issue:
+      "① EC2 서버 운영 중 CPU 사용률이 100%에 도달하고 서비스 접근에 문제가 발생했습니다. 서버 자원 상태를 점검하고 EC2 직렬 콘솔 및 스왑 메모리 설정을 활용해 복구를 시도했습니다. 다만 CPU 사용률 상승의 직접적인 원인은 별도 분석이 필요합니다.\n\n② 매주 판매 상품 구성이 변경되는 환경에서 과거 주문 내역을 유지해야 했습니다. 현재 판매 상품과 주문 당시 상품 정보를 분리하고, OrderedItem에 상품명·가격·수량을 별도로 저장했습니다. 이를 통해 판매 상품 목록이 변경되어도 기존 주문 정보를 보존하도록 설계했습니다.",
+  
+    issueFoot:
+      "개선점: 상품 정보를 삭제하는 대신 판매 상태 및 판매 기간을 관리했다면 과거 상품 정보의 재사용과 운영 이력 관리가 더 용이했을 것입니다. 또한 EC2 장애는 메모리 부족, CPU 사용 프로세스, 로그 등을 구분해 원인을 진단할 필요가 있습니다.",
+  
+    image: "/images/projects/nongjangs/thumbnail.png",
+  
+    media: [
       {
-        "type": "image",
-        "src": "/images/projects/nongjangs/screenshot1.png",
-        "label": "로그인 화면"
+        type: "image",
+        src: "/images/projects/nongjangs/screenshot1.png",
+        label: "로그인 화면"
       },
       {
-        "type": "image",
-        "src": "/images/projects/nongjangs/screenshot2.png",
-        "label": "주문 화면"
+        type: "image",
+        src: "/images/projects/nongjangs/screenshot2.png",
+        label: "주문 화면"
       },
       {
-        "type": "image",
-        "src": "/images/projects/nongjangs/screenshot3.png",
-        "label": "관리자 화면"
+        type: "image",
+        src: "/images/projects/nongjangs/screenshot3.png",
+        label: "관리자 화면"
       }
     ]
   },
+
   {
     "slug": "aurora",
     "title": "Aurora",
-    "short": "낯선 사람과의 음성 대화를 연결하는 모바일 앱",
+    "short": "무작위 유저와 음성 대화를 연결하는 모바일 앱",
     "category": "개인 프로젝트",
     "role": "모바일 앱 MVP 개발",
     "tech": [
