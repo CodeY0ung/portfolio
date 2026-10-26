@@ -154,40 +154,58 @@ export const projects: Project[] = [
     ]
   },
   {
-    "slug": "fight-cam",
-    "title": "Fight Cam",
-    "short": "움직이는 피사체를 따라가는 영상 편집 앱",
-    "category": "개인 프로젝트",
-    "role": "Flutter 앱 / 수동 트래킹 MVP",
-    "tech": [
+    slug: "fight-cam",
+    title: "Fight Cam",
+    short: "MMA 스파링 영상을 위한 AI·수동 트래킹 편집 앱",
+    category: "개인 프로젝트",
+    role: "기술 스택 선정 · UI/UX 설계 · 트래킹 방식 설계",
+  
+    tech: [
       "Flutter",
-      "FFmpeg",
-      "Firebase"
+      "Dart",
+      "Google ML Kit",
+      "FFmpeg"
     ],
-    "overview": "격투기 영상에서 피사체를 따라가며 화면의 위치와 확대 비율을 조절하는 편집 도구입니다. 가상 조이스틱 기반의 수동 트래킹 편집 흐름을 먼저 구현했습니다.",
-    "contributions": [
-      "가상 조이스틱으로 팬·줌을 조절하는 편집 UI",
-      "수동 트래킹 MVP 및 편집 흐름 구현",
-      "실제 편집 과정을 보여주는 시연 영상 제작"
+  
+    overview:
+      "MMA 스파링 영상에서 원하는 선수를 따라가도록 화면의 위치와 확대 비율을 조절하는 모바일 편집 앱입니다. Google ML Kit을 이용한 자동 추적과 가상 조이스틱을 이용한 수동 팬·줌 편집을 결합했습니다.",
+  
+    contributions: [
+      "Flutter, Google ML Kit, FFmpeg 기반 기술 스택 선정",
+      "모바일 편집 화면과 가상 조이스틱 팬·줌 UI/UX 설계",
+      "자동 추적 한계 분석 및 수동 편집을 통한 보정 흐름 설계",
+      "추적 대상 지정, 궤적 생성, 카메라 이동 및 영상 출력 흐름 구현"
     ],
-    "architecture": [
-      "Flutter",
-      "편집 제어",
-      "영상 처리"
+  
+    architecture: [
+      "Flutter 편집 UI",
+      "ML Kit Object Detection",
+      "추적 좌표 보정",
+      "FFmpeg 영상 출력"
     ],
-    "architectureNote": "수정 예정",
-    "issueTitle": "영상 트래킹 제어 UX",
-    "issue": "이동하는 대상을 사용자가 직관적으로 따라갈 수 있도록 수동 조작 방식을 우선 구현했습니다.",
-    "issueFoot": "수정 예정",
-    "image": "/images/projects/fight-cam/thumbnail.jpg",
-    "media": [
+  
+    architectureNote:
+      "FFmpeg로 영상 프레임을 추출하고 ML Kit Object Detection의 trackingId와 거리 기반 매칭으로 대상을 추적합니다. Alpha-Beta-Gamma Filter로 위치를 예측하고 Catmull-Rom 보간으로 15fps 추적 결과를 30fps 경로로 변환합니다. 수동 편집에서는 프레임별 팬·줌 입력을 기록하고 Moving Average로 카메라 이동 경로를 평활화합니다.",
+  
+    issueTitle:
+      "다중 인물 환경에서 트래킹 대상이 바뀌는 문제",
+  
+    issue:
+      "ML Kit Pose Detection 기반 접근은 두 선수가 교차하거나 가려질 때 특정 선수를 일관되게 추적하기 어려웠습니다. 여러 추적 방식을 검토한 뒤 Object Detection의 trackingId 고정, 최근 위치와의 거리 기반 재탐색, 위치 예측을 조합했습니다. 그래도 대상이 바뀌거나 사라질 수 있어 사용자가 영상의 팬·줌 경로를 직접 보정할 수 있는 수동 편집 기능을 제공했습니다.",
+  
+    issueFoot:
+      "향후 ByteTrack, BoT-SORT 및 Person Re-ID를 연구하여 선수 교차·가림 상황에서도 동일 인물을 유지하는 자동 트래킹 정확도를 높일 계획입니다. 현재 추적 성공률은 별도로 검증하지 않았습니다.",
+  
+    image: "/images/projects/fight-cam/thumbnail.jpg",
+  
+    media: [
       {
-        "type": "video",
-        "src": "/videos/projects/fight-cam/fight-cam.mp4",
-        "label": "수동 트래킹 시연"
+        type: "video",
+        src: "/videos/projects/fight-cam/fight-cam.mp4",
+        label: "수동 트래킹 시연"
       }
     ]
-  }
+  },
 ];
 
 export function findProject(slug: string): Project | undefined {
