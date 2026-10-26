@@ -1,53 +1,105 @@
 
-import { getKnowledge } from "@/lib/knowledge";
+import {
+  Coffee,
+  Layers,
+  Database,
+  Globe,
+  GitBranch,
+  Cpu,
+  ArrowUpRight,
+} from "lucide-react";
 
-export async function KnowledgeSection() {
-  const categories = await getKnowledge();
+const categories = [
+  {
+    title: "Java",
+    description: "OOP · Collection · JVM",
+    icon: Coffee,
+    folder: "JAVA",
+  },
+  {
+    title: "Spring",
+    description: "MVC · JPA · Security",
+    icon: Layers,
+    folder: "Spring",
+  },
+  {
+    title: "Database",
+    description: "SQL · JDBC · Transaction",
+    icon: Database,
+    folder: "DB",
+  },
+  {
+    title: "Web",
+    description: "HTTP · Servlet · JSP",
+    icon: Globe,
+    folder: "JSP",
+  },
+  {
+    title: "Git",
+    description: "Branch · Merge · Workflow",
+    icon: GitBranch,
+    folder: "git",
+  },
+  {
+    title: "CS",
+    description: "OS · Network · Data Structure",
+    icon: Cpu,
+    folder: "CS",
+  },
+];
 
+const REPO =
+  "https://github.com/CodeY0ung/dev_knowledge_base";
+
+export function KnowledgeSection() {
   return (
     <section className="knowledge" id="knowledge">
+      <div className="knowledge-heading">
+        <span>PORTFOLIO / KNOWLEDGE</span>
+      </div>
+
       <div className="section-header">
         <h2>Development Notes.</h2>
-        <span className="section-count">KNOWLEDGE BASE</span>
       </div>
 
       <p className="knowledge-description">
-        학습하고 검증한 개발 지식을 주제별로 정리합니다.
+        개발하면서 학습하고 검증한 기술 지식을 정리합니다.
       </p>
 
       <div className="knowledge-grid">
-        {categories.map((category) => (
-          <div className="knowledge-card" key={category.name}>
-            <div className="knowledge-card-header">
-              <h3>{category.name}</h3>
-              <span>{category.docs.length} NOTES</span>
-            </div>
+        {categories.map((category) => {
+          const Icon = category.icon;
 
-            <ul>
-              {category.docs.map((doc) => (
-                <li key={doc.path}>
-                  <a
-                    href={doc.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span>{doc.name}</span>
-                    <span aria-hidden="true">↗</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+          return (
+            <a
+              key={category.title}
+              href={`${REPO}/tree/main/${category.folder}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="knowledge-card"
+            >
+              <Icon size={24} strokeWidth={1.7} />
+
+              <div>
+                <h3>{category.title}</h3>
+                <p>{category.description}</p>
+              </div>
+            </a>
+          );
+        })}
       </div>
 
       <a
-        className="knowledge-all"
-        href="https://github.com/CodeY0ung/dev_knowledge_base"
+        href={REPO}
         target="_blank"
         rel="noopener noreferrer"
+        className="knowledge-footer"
       >
-        모든 학습 기록 보기 <span aria-hidden="true">↗</span>
+        <div>
+          <strong>Knowledge Base</strong>
+          <span>GitHub에서 전체 학습 기록 보기</span>
+        </div>
+        <ArrowUpRight size={20} />
       </a>
     </section>
   );
