@@ -21,7 +21,7 @@ export default async function Home() {
         <p className="hero-desc">
           Java와 Spring Boot를 주력으로 웹서비스를 개발하고,
           <br className="desktop-break" />
-          Flutter와 React를 활용해 서비스의 전체 흐름을 구현해 왔습니다.
+          Flutter와 JavaScript를 활용해 서비스의 전체 흐름을 구현해 왔습니다.
           <br />
           백엔드 전문성을 기반으로 풀스택 역량을 확장하고,
           <br className="desktop-break" />
@@ -34,7 +34,7 @@ export default async function Home() {
             'Spring Boot',
             'MySQL',
             'Flutter',
-            'React',
+            'JavaScript',
             'Python',
             'FastAPI'
           ].map((tech) => (
